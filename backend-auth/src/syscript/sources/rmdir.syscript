@@ -1,0 +1,14 @@
+// rmdir - Remove empty directory
+// Part of Synapse OS v1.0
+//
+// Usage: rmdir <directory>
+// Removes an empty directory.
+
+void Main(string[] args) {
+    if (args.Length == 0) {
+        Console.Log("rmdir: missing operand");
+        return;
+    }
+
+    File.RemoveDir(args[0]);
+}

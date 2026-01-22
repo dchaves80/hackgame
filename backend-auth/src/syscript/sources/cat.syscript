@@ -1,0 +1,15 @@
+// cat - Concatenate and display file contents
+// Part of Synapse OS v1.0
+//
+// Usage: cat <file>
+// Displays the contents of the specified file.
+
+void Main(string[] args) {
+    if (args.Length == 0) {
+        Console.Log("cat: missing file operand");
+        return;
+    }
+
+    string content = File.Read(args[0]);
+    Console.Log(content);
+}

@@ -1,0 +1,14 @@
+// touch - Create empty file or update timestamp
+// Part of Synapse OS v1.0
+//
+// Usage: touch <file>
+// Creates an empty file if it doesn't exist.
+
+void Main(string[] args) {
+    if (args.Length == 0) {
+        Console.Log("touch: missing file operand");
+        return;
+    }
+
+    File.Create(args[0]);
+}

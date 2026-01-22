@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-950 text-gray-100 font-mono antialiased;
+  }
+
+  /* Override browser autofill styles */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: theme('colors.gray.100');
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px theme('colors.dark.800 / 0.5');
+  }
+
+  /* Firefox autofill */
+  input:-moz-autofill,
+  input:-moz-autofill-preview {
+    filter: none;
+    background-color: theme('colors.dark.800 / 0.5') !important;
+    color: theme('colors.gray.100') !important;
+  }
+}
+
+@layer components {
+  /* HUD Border Effect - minimalista */
+  .hud-border {
+    position: relative;
+    border: 1px solid theme('colors.cyber.500 / 0.3');
+  }
+
+  .hud-border::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg,
+      theme('colors.cyber.500 / 0.1') 0%,
+      transparent 50%,
+      theme('colors.cyber.500 / 0.1') 100%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hud-border:hover::before {
+    opacity: 1;
+  }
+
+  /* Corner brackets - minimalista */
+  .corner-brackets {
+    position: relative;
+  }
+
+  .corner-brackets::before,
+  .corner-brackets::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 1px solid theme('colors.cyber.500');
+  }
+
+  .corner-brackets::before {
+    top: -1px;
+    left: -1px;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .corner-brackets::after {
+    bottom: -1px;
+    right: -1px;
+    border-left: none;
+    border-top: none;
+  }
+
+  /* Scan line effect */
+  .scan-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right,
+      transparent,
+      theme('colors.cyber.500 / 0.5'),
+      transparent
+    );
+    animation: scan 2s linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px theme('colors.cyber.500 / 0.5');
+  }
+
+  .text-glow-sm {
+    text-shadow: 0 0 5px theme('colors.cyber.500 / 0.3');
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}

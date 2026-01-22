@@ -1,0 +1,24 @@
+// ps - List running processes
+// Part of Synapse OS v1.0
+//
+// Usage: ps
+// Displays all running processes on the current system.
+
+void Main(string[] args) {
+    string[] procs = Process.List();
+
+    if (procs.Length == 0) {
+        Console.Log("No processes running");
+        return;
+    }
+
+    // Header
+    Console.Log("  PID  USER       STATUS     COMMAND");
+    Console.Log("─────────────────────────────────────────");
+
+    // List each process
+    for (int i = 0; i < procs.Length; i = i + 1) {
+        string line = "  " + procs[i].pid + "  " + procs[i].user + "  " + procs[i].status + "  " + procs[i].name;
+        Console.Log(line);
+    }
+}

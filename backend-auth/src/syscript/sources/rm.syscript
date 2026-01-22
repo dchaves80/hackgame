@@ -1,0 +1,19 @@
+// rm - Remove file
+// Part of Synapse OS v1.0
+//
+// Usage: rm <file>
+// Removes the specified file.
+
+void Main(string[] args) {
+    if (args.Length == 0) {
+        Console.Log("rm: missing operand");
+        return;
+    }
+
+    if (File.Exists(args[0]) == false) {
+        Console.Log("rm: cannot remove '" + args[0] + "': No such file");
+        return;
+    }
+
+    File.Delete(args[0]);
+}

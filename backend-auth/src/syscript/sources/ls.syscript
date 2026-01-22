@@ -1,0 +1,30 @@
+// ls - List Directory Contents
+// Part of Synapse OS v1.0
+//
+// Usage: ls [directory]
+// Lists the contents of the specified directory, or current directory if none specified.
+
+void Main(string[] args) {
+    string[] items;
+
+    if (args.Length == 0) {
+        items = File.List(null);
+    } else {
+        items = File.List(args[0]);
+    }
+
+    if (items.Length == 0) {
+        return;
+    }
+
+    for (int i = 0; i < items.Length; i = i + 1) {
+        string icon;
+        if (items[i].type == "d") {
+            icon = "📁";
+        } else {
+            icon = "📄";
+        }
+        string line = icon + " " + items[i].name;
+        Console.Log(line);
+    }
+}

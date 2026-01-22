@@ -1,0 +1,14 @@
+// cp - Copy file
+// Part of Synapse OS v1.0
+//
+// Usage: cp <source> <destination>
+// Copies a file to a new location.
+
+void Main(string[] args) {
+    if (args.Length < 2) {
+        Console.Log("cp: missing operand");
+        return;
+    }
+
+    File.Copy(args[0], args[1]);
+}

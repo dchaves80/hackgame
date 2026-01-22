@@ -1,0 +1,14 @@
+// mkdir - Make directory
+// Part of Synapse OS v1.0
+//
+// Usage: mkdir <directory>
+// Creates a new directory.
+
+void Main(string[] args) {
+    if (args.Length == 0) {
+        Console.Log("mkdir: missing operand");
+        return;
+    }
+
+    File.MakeDir(args[0]);
+}

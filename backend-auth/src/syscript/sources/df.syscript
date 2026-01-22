@@ -1,0 +1,17 @@
+// df - Display disk space usage
+// Part of Synapse OS v1.0
+//
+// Usage: df
+// Displays disk space usage for all mounted filesystems.
+
+void Main(string[] args) {
+    string[] disks = Disk.Usage();
+
+    Console.Log("Filesystem      Size       Used      Avail   Use%  Mounted on");
+    Console.Log("────────────────────────────────────────────────────────────────");
+
+    for (int i = 0; i < disks.Length; i = i + 1) {
+        string line = "/dev/" + disks[i].device + "  " + disks[i].capacityMB + "M  " + disks[i].usedMB + "M  " + disks[i].availableMB + "M  " + disks[i].percent + "%  " + disks[i].mountPoint;
+        Console.Log(line);
+    }
+}

@@ -1,0 +1,14 @@
+// cd - Change Directory
+// Part of Synapse OS v1.0
+//
+// Usage: cd <directory>
+// Changes the current working directory to the specified path.
+
+void Main(string[] args) {
+    if (args.Length == 0) {
+        Console.Log("cd: missing operand");
+        return;
+    }
+
+    Console.ChangeDir(args[0]);
+}

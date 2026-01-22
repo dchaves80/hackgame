@@ -1,0 +1,10 @@
+// pwd - Print Working Directory
+// Part of Synapse OS v1.0
+//
+// Usage: pwd
+// Displays the current working directory.
+
+void Main(string[] args) {
+    string cwd = Console.GetWorkingDir();
+    Console.Log(cwd);
+}

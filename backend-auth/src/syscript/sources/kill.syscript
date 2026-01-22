@@ -1,0 +1,17 @@
+// kill - Terminate a process
+// Part of Synapse OS v1.0
+//
+// Usage: kill <pid>
+// Terminates the process with the specified PID.
+// Protected system processes cannot be killed.
+
+void Main(string[] args) {
+    if (args.Length == 0) {
+        Console.Log("kill: usage: kill <pid>");
+        return;
+    }
+
+    string[] result = Process.Kill(args[0]);
+
+    Console.Log(result.message);
+}

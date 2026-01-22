@@ -1,0 +1,20 @@
+// fillme - Fill disk slowly with data
+// Part of Synapse OS v1.0
+//
+// Usage: fillme
+// Creates 20 files that slowly fill up disk space (~100 bytes each)
+
+void Main(string[] args) {
+    Console.Log("Starting disk fill...");
+    Console.Log("Writing 20 chunks of data...");
+
+    string data = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+
+    for (int i = 0; i < 20; i = i + 1) {
+        string filename = "chunk_" + i + ".dat";
+        File.Write(filename, data);
+        Console.Log("Created: " + filename);
+    }
+
+    Console.Log("Done! Check disk usage with: df");
+}

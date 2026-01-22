@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash",
+      "WebSearch",
+      "WebFetch",
+      "Glob",
+      "Grep",
+      "Task",
+      "mcp__*",
+      "Read(//d/AldylServices/dataoilmanager-front/**)",
+      "WebFetch(domain:documentation.greyscript.org)",
+      "WebFetch(domain:codedocs.ghtools.xyz)",
+      "Bash(curl -X POST http://localhost:3000/auth/register -H \"Content-Type: application/json\" -d \"{\"\"username\"\":\"\"testuser\"\",\"\"email\"\":\"\"test@example.com\"\",\"\"password\"\":\"\"password123\"\"}\")",
+      "Bash(curl -X POST http://localhost:3000/auth/register -H \"Content-Type: application/json\" -d \"{\"\"username\"\":\"\"hacker1\"\",\"\"email\"\":\"\"hacker1@test.com\"\",\"\"password\"\":\"\"securepass123\"\"}\")",
+      "Bash(curl -X POST http://localhost:3000/auth/register -H \"Content-Type: application/json\" -d \"{\"\"username\"\":\"\"player1\"\",\"\"email\"\":\"\"player1@test.com\"\",\"\"password\"\":\"\"mypass123\"\"}\")"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "bypassPermissions"
+  }
+}

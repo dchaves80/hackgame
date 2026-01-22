@@ -1,0 +1,15 @@
+// mv - Move/rename file
+// Part of Synapse OS v1.0
+//
+// Usage: mv <source> <destination>
+// Moves or renames a file.
+
+void Main(string[] args) {
+    if (args.Length < 2) {
+        Console.Log("mv: missing operand");
+        return;
+    }
+
+    File.Copy(args[0], args[1]);
+    File.Delete(args[0]);
+}

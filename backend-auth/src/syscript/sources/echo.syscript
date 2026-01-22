@@ -1,0 +1,21 @@
+// echo - Display text
+// Part of Synapse OS v1.0
+//
+// Usage: echo [text...]
+// Displays the provided text arguments.
+
+void Main(string[] args) {
+    if (args.Length == 0) {
+        Console.Log("");
+        return;
+    }
+
+    string output = "";
+    for (int i = 0; i < args.Length; i = i + 1) {
+        if (i > 0) {
+            output = output + " ";
+        }
+        output = output + args[i];
+    }
+    Console.Log(output);
+}

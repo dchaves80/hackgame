@@ -1,0 +1,13 @@
+// megaecho - Echo message multiple times
+// Usage: megaecho <count>
+
+void Main(string[] args) {
+    if (args.Length < 1) {
+        Console.Log("Usage: megaecho <count>");
+        return;
+    }
+
+    for (int i = 0; i < args[0]; i = i + 1) {
+        Console.Log("Hello There: " + i);
+    }
+}

@@ -1,0 +1,9 @@
+// clear - Clear terminal screen
+// Part of Synapse OS v1.0
+//
+// Usage: clear
+// Clears the terminal screen.
+
+void Main(string[] args) {
+    Console.Clear();
+}
